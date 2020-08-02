@@ -37,6 +37,7 @@ input {
   display: grid;
   grid-template-columns: 1fr;
   z-index: 5;
+
 }
 
 form {
@@ -49,6 +50,7 @@ form {
   overflow: hidden;
   grid-column: 1 / 2;
   grid-row: 1 / 2;
+
 }
 
 form.sign-up-form {
@@ -77,6 +79,7 @@ form.sign-in-form {
   grid-template-columns: 15% 85%;
   padding: 0 0.4rem;
   position: relative;
+
 }
 
 .input-field i {
@@ -229,6 +232,7 @@ form.sign-in-form {
 .right-panel .image,
 .right-panel .content {
   transform: translateX(800px);
+
 }
 
 /* ANIMATION */
@@ -236,11 +240,15 @@ form.sign-in-form {
 .container.sign-up-mode:before {
   transform: translate(100%, -50%);
   right: 52%;
+  perspective: 1000;
+  backface-visibility: hidden;
 }
 
 .container.sign-up-mode .left-panel .image,
 .container.sign-up-mode .left-panel .content {
   transform: translateX(-800px);
+  perspective: 1000;
+  backface-visibility: hidden;
 }
 
 .container.sign-up-mode .signin-signup {
@@ -260,14 +268,18 @@ form.sign-in-form {
 .container.sign-up-mode .right-panel .image,
 .container.sign-up-mode .right-panel .content {
   transform: translateX(0%);
+  perspective: 1000;
+  backface-visibility: hidden;
 }
 
 .container.sign-up-mode .left-panel {
   pointer-events: none;
+
 }
 
 .container.sign-up-mode .right-panel {
   pointer-events: all;
+
 }
 
 @media (max-width: 870px) {
@@ -275,11 +287,14 @@ form.sign-in-form {
     min-height: 800px;
     height: 100vh;
   }
+
   .signin-signup {
     width: 100%;
     top: 95%;
     transform: translate(-50%, -100%);
     transition: 1s 0.8s ease-in-out;
+    perspective: 1000;
+    backface-visibility: hidden;
   }
 
   .signin-signup,
@@ -306,12 +321,14 @@ form.sign-in-form {
 
   .left-panel {
     grid-row: 1 / 2;
+
   }
 
   .image {
     width: 200px;
     transition: transform 0.9s ease-in-out;
     transition-delay: 0.6s;
+
   }
 
   .panel .content {
@@ -322,6 +339,7 @@ form.sign-in-form {
 
   .panel h3 {
     font-size: 1.2rem;
+
   }
 
   .panel p {
@@ -344,32 +362,40 @@ form.sign-in-form {
     right: initial;
     top: initial;
     transition: 2s ease-in-out;
+
   }
 
   .container.sign-up-mode:before {
     transform: translate(-50%, 100%);
     bottom: 32%;
     right: initial;
+
   }
 
   .container.sign-up-mode .left-panel .image,
   .container.sign-up-mode .left-panel .content {
     transform: translateY(-300px);
+    perspective: 1000;
+    backface-visibility: hidden;
   }
 
   .container.sign-up-mode .right-panel .image,
   .container.sign-up-mode .right-panel .content {
     transform: translateY(0px);
+    perspective: 1000;
+    backface-visibility: hidden;
   }
 
   .right-panel .image,
   .right-panel .content {
     transform: translateY(300px);
+
   }
 
   .container.sign-up-mode .signin-signup {
     top: 5%;
     transform: translate(-50%, 0);
+
   }
 }
 
@@ -380,6 +406,7 @@ form.sign-in-form {
 
   .image {
     display: none;
+
   }
   .panel .content {
     padding: 0.5rem 1rem;
@@ -396,5 +423,6 @@ form.sign-in-form {
   .container.sign-up-mode:before {
     bottom: 28%;
     left: 50%;
+    
   }
 }
