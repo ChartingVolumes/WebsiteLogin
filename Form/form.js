@@ -98,6 +98,6 @@
     }
 
     // function signOut() {
-    //     auth.signOut;
+    //     auth.signOut();
     //     alert("You've signed out." + email);
     // }
