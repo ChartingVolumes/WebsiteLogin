@@ -22,24 +22,18 @@
             alert("Signed Up");
     }
 
-    // Not working
     function facebookSignIn() {
         var provider = new firebase.auth.FacebookAuthProvider();
 
         // What kind of info you want to access
         provider.addScope('user_birthday');
         firebase.auth().useDeviceLanguage();
-        firebase.auth().getRedirectResult().then(function(result) {
-            if (result.credential) {
-              // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-              var token = result.credential.accessToken;
-              var user = result.user;
-              console.log(user);
-              var userEmail = document.querySelector("#user-email");
-              userEmail.innerHTML = user.email;
-            }
+        firebase.auth().signInWithPopup(provider).then(function(result) {
+            // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+            var token = result.credential.accessToken;
             // The signed-in user info.
             var user = result.user;
+            // ...
           }).catch(function(error) {
             // Handle Errors here.
             var errorCode = error.code;
